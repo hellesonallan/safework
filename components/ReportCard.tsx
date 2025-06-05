@@ -17,12 +17,7 @@ interface ReportCardProps {
   status: Status; // Nova prop para controlar o status
 }
 
-export default function ReportCard({
-  title,
-  date,
-  location,
-  status,
-}: ReportCardProps) {
+export function ReportCard({ title, date, location, status }: ReportCardProps) {
   const statusConfig = {
     pending: {
       bgColor: "bg-yellow-500",
