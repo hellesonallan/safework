@@ -1,12 +1,11 @@
 import "~/global.css";
-
 import {
   DarkTheme,
   DefaultTheme,
   Theme,
   ThemeProvider,
 } from "@react-navigation/native";
-import { Stack } from "expo-router";
+import { Tabs } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import * as React from "react";
 import { Appearance, Platform } from "react-native";
@@ -15,6 +14,7 @@ import { useColorScheme } from "~/lib/useColorScheme";
 import { PortalHost } from "@rn-primitives/portal";
 import { ThemeToggle } from "~/components/ThemeToggle";
 import { setAndroidNavigationBar } from "~/lib/android-navigation-bar";
+import { BackButton } from "~/components/BackButton";
 
 const LIGHT_THEME: Theme = {
   ...DefaultTheme,
@@ -25,10 +25,7 @@ const DARK_THEME: Theme = {
   colors: NAV_THEME.dark,
 };
 
-export {
-  // Catch any errors thrown by the Layout component.
-  ErrorBoundary,
-} from "expo-router";
+export { ErrorBoundary } from "expo-router";
 
 const usePlatformSpecificSetup = Platform.select({
   web: useSetWebBackgroundClassName,
@@ -43,22 +40,37 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
       <StatusBar style={isDarkColorScheme ? "light" : "dark"} />
-      <Stack>
-        <Stack.Screen
+      <Tabs
+        screenOptions={{
+          tabBarActiveTintColor: isDarkColorScheme ? "#3b82f6" : "#2563eb",
+          tabBarInactiveTintColor: isDarkColorScheme ? "#94a3b8" : "#64748b",
+          tabBarStyle: {
+            backgroundColor: isDarkColorScheme ? "#1e293b" : "#ffffff",
+          },
+        }}
+      >
+        <Tabs.Screen
           name="index"
           options={{
-            title: "SafeWork",
+            title: "Início",
             headerRight: () => <ThemeToggle />,
           }}
         />
-        <Stack.Screen
+        <Tabs.Screen
           name="report-list"
           options={{
             title: "Reportes",
+            headerLeft: () => <BackButton />,
             headerRight: () => <ThemeToggle />,
           }}
         />
-      </Stack>
+        <Tabs.Screen
+          name="+not-found"
+          options={{
+            href: null,
+          }}
+        />
+      </Tabs>
       <PortalHost />
     </ThemeProvider>
   );

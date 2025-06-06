@@ -14,94 +14,92 @@ export default function Screen() {
   };
 
   return (
-    <SafeAreaView edges={["bottom"]}>
-      <ScrollView className="h-full p-4">
-        <HeaderTitle
-          classname="mb-4"
-          title="Todos os Reportes"
-          subtitle="Visualize aqui todos os seus reportes"
+    <ScrollView className="h-full p-4">
+      <HeaderTitle
+        classname="mb-4"
+        title="Todos os Reportes"
+        subtitle="Visualize aqui todos os seus reportes"
+      />
+      <Input
+        className="mb-4"
+        placeholder="Pesquise os reportes..."
+        value={value}
+        onChangeText={onChangeText}
+        aria-labelledby="inputLabel"
+        aria-errormessage="inputError"
+      />
+      <View className="mb-4">
+        <ReportCard
+          title="Vazamento no banheiro"
+          subtitle="Problema hidráulico"
+          date="28/04/2025"
+          location="Banheiro 2º andar"
+          status="in_progress"
         />
-        <Input
-          className="mb-4"
-          placeholder="Pesquise os reportes..."
-          value={value}
-          onChangeText={onChangeText}
-          aria-labelledby="inputLabel"
-          aria-errormessage="inputError"
+        <ReportCard
+          title="Vazamento no banheiro"
+          subtitle="Problema hidráulico"
+          date="28/04/2025"
+          location="Banheiro 2º andar"
+          status="in_progress"
         />
-        <View className="mb-2">
-          <ReportCard
-            title="Vazamento no banheiro"
-            subtitle="Problema hidráulico"
-            date="28/04/2025"
-            location="Banheiro 2º andar"
-            status="in_progress"
-          />
-          <ReportCard
-            title="Vazamento no banheiro"
-            subtitle="Problema hidráulico"
-            date="28/04/2025"
-            location="Banheiro 2º andar"
-            status="in_progress"
-          />
-          <ReportCard
-            title="Vazamento no banheiro"
-            subtitle="Problema hidráulico"
-            date="28/04/2025"
-            location="Banheiro 2º andar"
-            status="in_progress"
-          />
-          <ReportCard
-            title="Vazamento no banheiro"
-            subtitle="Problema hidráulico"
-            date="28/04/2025"
-            location="Banheiro 2º andar"
-            status="in_progress"
-          />
-          <ReportCard
-            title="Vazamento no banheiro"
-            subtitle="Problema hidráulico"
-            date="28/04/2025"
-            location="Banheiro 2º andar"
-            status="in_progress"
-          />
-          <ReportCard
-            title="Vazamento no banheiro"
-            subtitle="Problema hidráulico"
-            date="28/04/2025"
-            location="Banheiro 2º andar"
-            status="in_progress"
-          />
-          <ReportCard
-            title="Vazamento no banheiro"
-            subtitle="Problema hidráulico"
-            date="28/04/2025"
-            location="Banheiro 2º andar"
-            status="in_progress"
-          />
-          <ReportCard
-            title="Vazamento no banheiro"
-            subtitle="Problema hidráulico"
-            date="28/04/2025"
-            location="Banheiro 2º andar"
-            status="in_progress"
-          />
-          <ReportCard
-            title="Vazamento no banheiro"
-            subtitle="Problema hidráulico"
-            date="28/04/2025"
-            location="Banheiro 2º andar"
-            status="in_progress"
-          />
-          <ReportCard
-            title="Vazamento no banheiro"
-            subtitle="Problema hidráulico"
-            date="28/04/2025"
-            location="Banheiro 2º andar"
-            status="in_progress"
-          />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+        <ReportCard
+          title="Vazamento no banheiro"
+          subtitle="Problema hidráulico"
+          date="28/04/2025"
+          location="Banheiro 2º andar"
+          status="in_progress"
+        />
+        <ReportCard
+          title="Vazamento no banheiro"
+          subtitle="Problema hidráulico"
+          date="28/04/2025"
+          location="Banheiro 2º andar"
+          status="in_progress"
+        />
+        <ReportCard
+          title="Vazamento no banheiro"
+          subtitle="Problema hidráulico"
+          date="28/04/2025"
+          location="Banheiro 2º andar"
+          status="in_progress"
+        />
+        <ReportCard
+          title="Vazamento no banheiro"
+          subtitle="Problema hidráulico"
+          date="28/04/2025"
+          location="Banheiro 2º andar"
+          status="in_progress"
+        />
+        <ReportCard
+          title="Vazamento no banheiro"
+          subtitle="Problema hidráulico"
+          date="28/04/2025"
+          location="Banheiro 2º andar"
+          status="in_progress"
+        />
+        <ReportCard
+          title="Vazamento no banheiro"
+          subtitle="Problema hidráulico"
+          date="28/04/2025"
+          location="Banheiro 2º andar"
+          status="in_progress"
+        />
+        <ReportCard
+          title="Vazamento no banheiro"
+          subtitle="Problema hidráulico"
+          date="28/04/2025"
+          location="Banheiro 2º andar"
+          status="in_progress"
+        />
+        <ReportCard
+          title="Vazamento no banheiro"
+          subtitle="Problema hidráulico"
+          date="28/04/2025"
+          location="Banheiro 2º andar"
+          status="in_progress"
+        />
+      </View>
+    </ScrollView>
   );
 }
