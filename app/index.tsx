@@ -8,12 +8,14 @@ import { Plus } from "~/lib/icons/Plus";
 import { List } from "~/lib/icons/List";
 import { ScrollText } from "~/lib/icons/ScrollText";
 import { ReportCard } from "~/components/ReportCard";
+import { router } from "expo-router";
 
 export default function Screen() {
   return (
     <SafeAreaView edges={["bottom"]}>
       <ScrollView className="h-full p-4">
         <HeaderTitle
+          classname="mb-4"
           title="Olá, João!"
           subtitle="Bem-vindo de volta ao SafeWork"
         />
@@ -55,7 +57,10 @@ export default function Screen() {
             status="in_progress"
           />
         </View>
-        <Button className="flex-row gap-2">
+        <Button
+          className="flex-row gap-2"
+          onPress={() => router.navigate("/report-list")}
+        >
           <ScrollText className="text-background" size={24} strokeWidth={2} />
           <Text>Ver Reportes</Text>
         </Button>
