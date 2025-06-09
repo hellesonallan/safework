@@ -1,16 +1,66 @@
-# Starter base
+# 🦺 SafeWork
 
-A starting point to help you set up your project quickly and use the common components provided by `react-native-reusables`. The idea is to make it easier for you to get started.
+O **SafeWork** é um aplicativo desenvolvido em React Native que permite que os funcionários de uma empresa relatem falhas ou problemas na infraestrutura das instalações. Através de reportes detalhados e organizados por setor, o sistema facilita a comunicação entre colaboradores e responsáveis pela manutenção, promovendo um ambiente de trabalho mais seguro e eficiente.
 
-## Features
+---
 
-- NativeWind v4
-- Dark and light mode
-  - Android Navigation Bar matches mode
-  - Persistent mode
-- Common components
-  - ThemeToggle, Avatar, Button, Card, Progress, Text, Tooltip
+## 🚧 Tecnologias Utilizadas
 
-<img src="https://github.com/mrzachnugent/react-native-reusables/assets/63797719/42c94108-38a7-498b-9c70-18640420f1bc"
-     alt="starter-base-template"
-     style="width:270px;" />
+- [React Native](https://reactnative.dev/)
+- [Expo](https://expo.dev/)
+- [Expo Router](https://expo.github.io/router/)
+- [Typescript](https://www.typescriptlang.org/)
+- [NativeWind (Tailwind CSS)](https://www.nativewind.dev/)
+- [Lucide React Native](https://www.npmjs.com/package/lucide-react-native)
+- [React Native Reusables](https://github.com/FaridSafi/react-native-gifted-chat) _(verificar se é essa lib que você usa)_
+- React Hooks
+
+---
+
+## 🚀 Instruções de Uso
+
+### ✅ Pré-requisitos
+
+Certifique-se de ter instalado:
+
+- Node.js
+- npm ou yarn
+- Expo CLI (`npm install -g expo-cli`)
+
+### 💾 Instalação
+
+Clone o repositório e instale as dependências:
+
+```bash
+git clone https://github.com/seu-usuario/safework.git
+cd safework
+npm install
+```
+
+### ▶️ Execução
+
+Para iniciar o projeto:
+
+`bash npx expo start`
+
+### 🧩 Estrutura do Projeto
+
+```
+.
+├── app/ # Raiz das páginas/telas
+│ └── reports/ # Estrutura dinâmica de relatórios
+├── assets/
+│ └── image/ # Imagens usadas no app
+├── components/ # Componentes reutilizáveis
+├── lib/ # Bibliotecas auxiliares e ícones
+├── README.md # Este arquivo
+```
+
+### ✍️ Autor
+
+Desenvolvido por:
+
+- Carlos Henrique do Nascimento
+- Helleson Allan Borges de Sant'ana
+- Joao Victor Oliveira Da Silva
+- Kaua Vitor do Nascimento Silva
