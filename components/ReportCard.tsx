@@ -6,18 +6,25 @@ import {
   CardTitle,
   CardDescription,
 } from "~/components/ui/card";
+import { router } from "expo-router";
 
 type Status = "pending" | "in_progress" | "completed";
 
 interface ReportCardProps {
+  id: string;
   title: string;
-  subtitle: string;
   date: string;
   location: string;
-  status: Status; // Nova prop para controlar o status
+  status: Status;
 }
 
-export function ReportCard({ title, date, location, status }: ReportCardProps) {
+export function ReportCard({
+  id,
+  title,
+  date,
+  location,
+  status,
+}: ReportCardProps) {
   const statusConfig = {
     pending: {
       bgColor: "bg-yellow-500",
@@ -33,8 +40,18 @@ export function ReportCard({ title, date, location, status }: ReportCardProps) {
     },
   };
 
+  const handlePress = () => {
+    router.push({
+      pathname: "/reports/[id]",
+      params: { id, title, status },
+    });
+  };
+
   return (
-    <Card className="flex-row justify-between items-center mb-2">
+    <Card
+      className="flex-row justify-between items-center mb-2"
+      onTouchEnd={handlePress}
+    >
       <CardHeader>
         <CardTitle className="text-lg">{title}</CardTitle>
         <CardDescription>{date}</CardDescription>

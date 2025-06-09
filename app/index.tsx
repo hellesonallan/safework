@@ -10,6 +10,33 @@ import { ScrollText } from "~/lib/icons/ScrollText";
 import { ReportCard } from "~/components/ReportCard";
 import { router } from "expo-router";
 
+const reports = [
+  {
+    id: "1",
+    title: "Vazamento no banheiro",
+    description: "Descrição do Card 1",
+    date: "28/04/2025",
+    location: "Banheiro 2º andar",
+    status: "in_progress" as const,
+  },
+  {
+    id: "2",
+    title: "Lâmpada queimada",
+    description: "Descrição do Card 2",
+    date: "29/04/2025",
+    location: "Sala de reuniões",
+    status: "pending" as const,
+  },
+  {
+    id: "3",
+    title: "Ar-condicionado com defeito",
+    description: "Descrição do Card 3",
+    date: "30/04/2025",
+    location: "Escritório 3",
+    status: "completed" as const,
+  },
+];
+
 export default function Screen() {
   return (
     <SafeAreaView edges={["top"]}>
@@ -31,52 +58,19 @@ export default function Screen() {
         <View className="flex-row justify-between items-center mb-4">
           <Text className="text-xl">Reportes Recentes</Text>
           <Button variant={"ghost"} size={"icon"}>
-            <List className="text-forebackground" size={32} strokeWidth={2} />
+            <List className="text-foreground" size={32} strokeWidth={2} />
           </Button>
         </View>
         <View className="mb-2">
-          <ReportCard
-            title="Vazamento no banheiro"
-            subtitle="Problema hidráulico"
-            date="28/04/2025"
-            location="Banheiro 2º andar"
-            status="in_progress"
-          />
-          <ReportCard
-            title="Vazamento no banheiro"
-            subtitle="Problema hidráulico"
-            date="28/04/2025"
-            location="Banheiro 2º andar"
-            status="in_progress"
-          />
-          <ReportCard
-            title="Vazamento no banheiro"
-            subtitle="Problema hidráulico"
-            date="28/04/2025"
-            location="Banheiro 2º andar"
-            status="in_progress"
-          />
-          <ReportCard
-            title="Vazamento no banheiro"
-            subtitle="Problema hidráulico"
-            date="28/04/2025"
-            location="Banheiro 2º andar"
-            status="in_progress"
-          />
-          <ReportCard
-            title="Vazamento no banheiro"
-            subtitle="Problema hidráulico"
-            date="28/04/2025"
-            location="Banheiro 2º andar"
-            status="in_progress"
-          />
-          <ReportCard
-            title="Vazamento no banheiro"
-            subtitle="Problema hidráulico"
-            date="28/04/2025"
-            location="Banheiro 2º andar"
-            status="in_progress"
-          />
+          {reports.map((report) => (
+            <ReportCard
+              id={report.id}
+              title={report.title}
+              date={report.date}
+              location={report.location}
+              status={report.status}
+            />
+          ))}
         </View>
         <Button
           className="flex-row gap-2 mb-6"
