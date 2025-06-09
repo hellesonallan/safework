@@ -1,8 +1,6 @@
 import { ScrollView, View } from "react-native";
 import { HeaderTitle } from "~/components/HeaderTitle";
-import { ReportCard } from "~/components/ReportCard";
 import { router } from "expo-router";
-import { Input } from "~/components/ui/input";
 import { useState } from "react";
 import { Avatar, AvatarImage, AvatarFallback } from "~/components/ui/avatar";
 import { Text } from "~/components/ui/text";

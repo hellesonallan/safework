@@ -18,6 +18,7 @@ import { BackButton } from "~/components/BackButton";
 import { Home } from "~/lib/icons/Home";
 import { List } from "~/lib/icons/List";
 import { User } from "~/lib/icons/User";
+import { Plus } from "~/lib/icons/Plus";
 
 const LIGHT_THEME: Theme = {
   ...DefaultTheme,
@@ -65,8 +66,15 @@ export default function RootLayout() {
           options={{
             title: "Reportes",
             headerLeft: () => <BackButton />,
-            headerRight: () => <ThemeToggle />,
             tabBarIcon: ({ color }) => <List size={24} color={color} />,
+          }}
+        />
+        <Tabs.Screen
+          name="new-report"
+          options={{
+            title: "Novo Reporte",
+            headerLeft: () => <BackButton />,
+            tabBarIcon: ({ color }) => <Plus size={24} color={color} />,
           }}
         />
         <Tabs.Screen
@@ -74,7 +82,6 @@ export default function RootLayout() {
           options={{
             title: "Perfil",
             headerLeft: () => <BackButton />,
-            headerRight: () => <ThemeToggle />,
             tabBarIcon: ({ color }) => <User size={24} color={color} />,
           }}
         />

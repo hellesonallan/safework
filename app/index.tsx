@@ -24,8 +24,8 @@ export default function Screen() {
           <StatsCard number={3} description="Em andamento" />
           <StatsCard number={5} description="Resolvidos" />
         </View>
-        <Button className="flex-row gap-2 mb-4">
-          <Plus className="text-background" size={24} strokeWidth={2} />
+        <Button className="flex-row mb-4">
+          <Plus className="text-background mr-2" size={24} strokeWidth={2} />
           <Text>Criar Novo Reporte</Text>
         </Button>
         <View className="flex-row justify-between items-center mb-4">

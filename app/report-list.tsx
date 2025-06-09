@@ -24,8 +24,7 @@ export default function Screen() {
         placeholder="Pesquise os reportes..."
         value={value}
         onChangeText={onChangeText}
-        aria-labelledby="inputLabel"
-        aria-errormessage="inputError"
+        aria-labelledby="search"
       />
       <View className="mb-4">
         <ReportCard
