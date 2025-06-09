@@ -5,7 +5,12 @@ import { router } from "expo-router";
 export function BackButton() {
   return (
     <Button className="rounded-full ml-2" variant={"ghost"} size={"icon"}>
-      <ArrowLeft size={24} strokeWidth={2} onPress={() => router.back()} />
+      <ArrowLeft
+        className="text-primary"
+        size={24}
+        strokeWidth={2}
+        onPress={() => router.back()}
+      />
     </Button>
   );
 }

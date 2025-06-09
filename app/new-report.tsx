@@ -8,7 +8,7 @@ import { Textarea } from "~/components/ui/textarea";
 import { Images } from "~/lib/icons/Images";
 import { Button } from "~/components/ui/button";
 import { Plus } from "~/lib/icons/Plus";
-import { Paperclip } from "~/lib/icons/PaperClip";
+import { Paperclip } from "~/lib/icons/Paperclip";
 import { Trash } from "~/lib/icons/Trash";
 import { Text } from "~/components/ui/text";
 import {
@@ -19,7 +19,7 @@ import {
 } from "~/components/ui/card";
 import { Progress } from "~/components/ui/progress";
 
-export default function Screen() {
+export default function NewReportScreen() {
   const [value, setValue] = useState("");
 
   const onChangeText = (text: string) => {
@@ -73,7 +73,7 @@ export default function Screen() {
         <View className="flex-row items-center">
           <Button className="flex-row mr-2" variant={"outline"}>
             <Paperclip
-              className="text-forebackground mr-2"
+              className="text-primary mr-2"
               size={24}
               strokeWidth={2}
             />
@@ -98,11 +98,11 @@ export default function Screen() {
       </View>
       <View className="mb-4">
         <Button className="flex-row mb-4 mr-2">
-          <Plus className="text-background mr-2" size={24} strokeWidth={2} />
+          <Plus className="text-secondary mr-2" size={24} strokeWidth={2} />
           <Text>Criar</Text>
         </Button>
         <Button className="flex-row mb-4 mr-2" variant={"destructive"}>
-          <Trash className="text-background mr-2" size={24} strokeWidth={2} />
+          <Trash className="text-secondary mr-2" size={24} strokeWidth={2} />
           <Text>Cancelar</Text>
         </Button>
       </View>

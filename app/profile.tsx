@@ -12,13 +12,17 @@ import { ScrollText } from "~/lib/icons/ScrollText";
 import { LogOut } from "~/lib/icons/LogOut";
 import { Info } from "~/lib/icons/Info";
 import { MessageSquareWarning } from "~/lib/icons/MessageSquareWarning";
+import { useColorScheme } from "~/lib/useColorScheme";
+import { setAndroidNavigationBar } from "~/lib/android-navigation-bar";
 
-export default function Screen() {
-  const [value, setValue] = useState("");
+export default function ProfileScreen() {
+  const { isDarkColorScheme, setColorScheme } = useColorScheme();
 
-  const onChangeText = (text: string) => {
-    setValue(text);
-  };
+  function toggleColorScheme() {
+    const newTheme = isDarkColorScheme ? "light" : "dark";
+    setColorScheme(newTheme);
+    setAndroidNavigationBar(newTheme);
+  }
 
   return (
     <ScrollView className="h-full p-4">
@@ -45,15 +49,16 @@ export default function Screen() {
           className="flex-row gap-2 mb-4 justify-start"
           variant={"outline"}
         >
-          <Bell className="text-forebackground" size={24} strokeWidth={2} />
+          <Bell className="text-primary" size={24} strokeWidth={2} />
           <Text>Notificações</Text>
         </Button>
         <Separator className="mb-4" />
         <Button
           className="flex-row gap-2 mb-4 justify-start"
           variant={"outline"}
+          onPress={toggleColorScheme}
         >
-          <Contrast className="text-forebackground" size={24} strokeWidth={2} />
+          <Contrast className="text-primary" size={24} strokeWidth={2} />
           <Text>Modo Alto Contraste</Text>
         </Button>
         <Separator className="mb-4" />
@@ -61,7 +66,7 @@ export default function Screen() {
           className="flex-row gap-2 mb-4 justify-start"
           variant={"outline"}
         >
-          <Info className="text-forebackground" size={24} strokeWidth={2} />
+          <Info className="text-primary" size={24} strokeWidth={2} />
           <Text>Suporte Online</Text>
         </Button>
         <Separator className="mb-4" />
@@ -70,7 +75,7 @@ export default function Screen() {
           variant={"outline"}
         >
           <MessageSquareWarning
-            className="text-forebackground"
+            className="text-primary"
             size={24}
             strokeWidth={2}
           />
@@ -81,11 +86,7 @@ export default function Screen() {
           className="flex-row gap-2 mb-4 justify-start"
           variant={"outline"}
         >
-          <ScrollText
-            className="text-forebackground"
-            size={24}
-            strokeWidth={2}
-          />
+          <ScrollText className="text-primary" size={24} strokeWidth={2} />
           <Text>Termos de Uso</Text>
         </Button>
         <Separator className="mb-4" />
@@ -93,7 +94,7 @@ export default function Screen() {
           className="flex-row gap-2 mb-4 justify-start"
           variant={"outline"}
         >
-          <LogOut className="text-forebackground" size={24} strokeWidth={2} />
+          <LogOut className="text-primary" size={24} strokeWidth={2} />
           <Text>Sair</Text>
         </Button>
       </View>

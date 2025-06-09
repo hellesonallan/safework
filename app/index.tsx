@@ -37,7 +37,7 @@ const reports = [
   },
 ];
 
-export default function Screen() {
+export default function HomeScreen() {
   return (
     <SafeAreaView edges={["top"]}>
       <ScrollView className="h-full p-4">
@@ -52,13 +52,13 @@ export default function Screen() {
           <StatsCard number={5} description="Resolvidos" />
         </View>
         <Button className="flex-row mb-4">
-          <Plus className="text-background mr-2" size={24} strokeWidth={2} />
+          <Plus className="text-secondary mr-2" size={24} strokeWidth={2} />
           <Text>Criar Novo Reporte</Text>
         </Button>
         <View className="flex-row justify-between items-center mb-4">
           <Text className="text-xl">Reportes Recentes</Text>
           <Button variant={"ghost"} size={"icon"}>
-            <List className="text-foreground" size={32} strokeWidth={2} />
+            <List className="text-primary" size={32} strokeWidth={2} />
           </Button>
         </View>
         <View className="mb-2">
@@ -76,7 +76,7 @@ export default function Screen() {
           className="flex-row gap-2 mb-6"
           onPress={() => router.navigate("/report-list")}
         >
-          <ScrollText className="text-background" size={24} strokeWidth={2} />
+          <ScrollText className="text-secondary" size={24} strokeWidth={2} />
           <Text>Ver Reportes</Text>
         </Button>
       </ScrollView>

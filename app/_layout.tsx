@@ -12,7 +12,6 @@ import { Appearance, Platform } from "react-native";
 import { NAV_THEME } from "~/lib/constants";
 import { useColorScheme } from "~/lib/useColorScheme";
 import { PortalHost } from "@rn-primitives/portal";
-import { ThemeToggle } from "~/components/ThemeToggle";
 import { setAndroidNavigationBar } from "~/lib/android-navigation-bar";
 import { BackButton } from "~/components/BackButton";
 import { Home } from "~/lib/icons/Home";
@@ -83,6 +82,14 @@ export default function RootLayout() {
             title: "Perfil",
             headerLeft: () => <BackButton />,
             tabBarIcon: ({ color }) => <User size={24} color={color} />,
+          }}
+        />
+        <Tabs.Screen
+          name="reports/[id]"
+          options={{
+            title: "Detalhes do Reporte",
+            headerLeft: () => <BackButton />,
+            href: null,
           }}
         />
         <Tabs.Screen
