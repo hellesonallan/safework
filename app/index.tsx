@@ -51,7 +51,7 @@ export default function HomeScreen() {
           <StatsCard number={3} description="Em andamento" />
           <StatsCard number={5} description="Resolvidos" />
         </View>
-        <Button className="flex-row mb-4">
+        <Button className="flex-row mb-4 bg-blue-500">
           <Plus className="text-secondary mr-2" size={24} strokeWidth={2} />
           <Text>Criar Novo Reporte</Text>
         </Button>
@@ -74,7 +74,7 @@ export default function HomeScreen() {
           ))}
         </View>
         <Button
-          className="flex-row gap-2 mb-6"
+          className="flex-row gap-2 mb-6 bg-blue-500"
           onPress={() => router.navigate("/report-list")}
         >
           <ScrollText className="text-secondary" size={24} strokeWidth={2} />

@@ -1,22 +1,14 @@
 import { ScrollView, View } from "react-native";
 import { HeaderTitle } from "~/components/HeaderTitle";
-import { router } from "expo-router";
 import { Input } from "~/components/ui/input";
 import { useState } from "react";
 import { Label } from "~/components/ui/label";
 import { Textarea } from "~/components/ui/textarea";
-import { Images } from "~/lib/icons/Images";
 import { Button } from "~/components/ui/button";
 import { Plus } from "~/lib/icons/Plus";
 import { Paperclip } from "~/lib/icons/Paperclip";
 import { Trash } from "~/lib/icons/Trash";
 import { Text } from "~/components/ui/text";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "~/components/ui/card";
 import { Progress } from "~/components/ui/progress";
 
 export default function NewReportScreen() {
@@ -97,7 +89,7 @@ export default function NewReportScreen() {
         </View>
       </View>
       <View className="mb-4">
-        <Button className="flex-row mb-4 mr-2">
+        <Button className="flex-row mb-4 mr-2 bg-blue-500">
           <Plus className="text-secondary mr-2" size={24} strokeWidth={2} />
           <Text>Criar</Text>
         </Button>

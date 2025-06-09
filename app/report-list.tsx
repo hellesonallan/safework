@@ -116,6 +116,7 @@ export default function ReportListScreen() {
           <ReportCard
             id={report.id}
             title={report.title}
+            description={report.description}
             date={report.date}
             location={report.location}
             status={report.status}

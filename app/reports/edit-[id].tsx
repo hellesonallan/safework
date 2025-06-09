@@ -5,6 +5,21 @@ import { Text } from "~/components/ui/text";
 import { router, useLocalSearchParams } from "expo-router";
 import { Button } from "~/components/ui/button";
 import { SquarePen } from "~/lib/icons/SquarePen";
+import { Trash } from "~/lib/icons/Trash";
+import { Save } from "~/lib/icons/Save";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "~/components/ui/select";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useState } from "react";
+import { Input } from "~/components/ui/input";
+import { Textarea } from "~/components/ui/textarea";
 
 type ReportDetailsParams = {
   id: string;
@@ -46,6 +61,20 @@ export default function ReportDetailsScreen() {
     });
   };
 
+  const insets = useSafeAreaInsets();
+  const contentInsets = {
+    top: insets.top,
+    bottom: insets.bottom,
+    left: 12,
+    right: 12,
+  };
+
+  const [value, setValue] = useState("");
+
+  const onChangeText = (text: string) => {
+    setValue(text);
+  };
+
   return (
     <ScrollView className="h-full p-4">
       <HeaderTitle
@@ -62,25 +91,58 @@ export default function ReportDetailsScreen() {
       />
       <View className="mb-4">
         <Text className="text-lg mb-2">{params.title}</Text>
-        <Badge className={`w-1/2 ${statusConfig[params.status].bgColor}`}>
-          <Text>{statusConfig[params.status].text}</Text>
-        </Badge>
+        <Select defaultValue={{ value: "in_progress", label: "Em Andamento" }}>
+          <SelectTrigger className="w-[250px]">
+            <SelectValue
+              className="text-foreground text-sm native:text-lg"
+              placeholder="Select a fruit"
+            />
+          </SelectTrigger>
+          <SelectContent insets={contentInsets} className="w-[250px]">
+            <SelectGroup>
+              <SelectLabel>Status</SelectLabel>
+              <SelectItem label="Em Andamento" value="in_progress">
+                Em andamento
+              </SelectItem>
+              <SelectItem label="Pendente" value="pending">
+                Pendente
+              </SelectItem>
+              <SelectItem label="Concluído" value="completed">
+                Concluído
+              </SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
       </View>
       <View className="mb-4">
         <Text className="text-lg mb-2">Localização</Text>
-        <Text className="font-light">{params.location}</Text>
+        <Input
+          placeholder="Digite a localização..."
+          value={value}
+          onChangeText={onChangeText}
+          aria-labelledby="location"
+        />
       </View>
       <View className="mb-4">
         <Text className="text-lg mb-2">Descrição</Text>
-        <Text className="font-light">{params.description}</Text>
+        <Textarea
+          placeholder="Digite uma breve descrição..."
+          value={value}
+          onChangeText={setValue}
+          aria-labelledby="description"
+        />
       </View>
       <View className="mb-4">
         <Text className="text-lg mb-2">Data do Reporte</Text>
         <Text className="font-light">{params.date}</Text>
       </View>
       <Button className="flex-row mb-4 mr-2 bg-blue-500" onPress={handlePress}>
-        <SquarePen className="text-secondary mr-2" size={24} strokeWidth={2} />
-        <Text>Editar</Text>
+        <Save className="text-secondary mr-2" size={24} strokeWidth={2} />
+        <Text>Salvar</Text>
+      </Button>
+      <Button className="flex-row mb-4 mr-2" variant={"destructive"}>
+        <Trash className="text-secondary mr-2" size={24} strokeWidth={2} />
+        <Text>Cancelar</Text>
       </Button>
     </ScrollView>
   );
