@@ -15,6 +15,9 @@ import { PortalHost } from "@rn-primitives/portal";
 import { ThemeToggle } from "~/components/ThemeToggle";
 import { setAndroidNavigationBar } from "~/lib/android-navigation-bar";
 import { BackButton } from "~/components/BackButton";
+import { Home } from "~/lib/icons/Home";
+import { List } from "~/lib/icons/List";
+import { User } from "~/lib/icons/User";
 
 const LIGHT_THEME: Theme = {
   ...DefaultTheme,
@@ -53,7 +56,8 @@ export default function RootLayout() {
           name="index"
           options={{
             title: "Início",
-            headerRight: () => <ThemeToggle />,
+            headerShown: false,
+            tabBarIcon: ({ color }) => <Home size={24} color={color} />,
           }}
         />
         <Tabs.Screen
@@ -62,6 +66,16 @@ export default function RootLayout() {
             title: "Reportes",
             headerLeft: () => <BackButton />,
             headerRight: () => <ThemeToggle />,
+            tabBarIcon: ({ color }) => <List size={24} color={color} />,
+          }}
+        />
+        <Tabs.Screen
+          name="profile"
+          options={{
+            title: "Perfil",
+            headerLeft: () => <BackButton />,
+            headerRight: () => <ThemeToggle />,
+            tabBarIcon: ({ color }) => <User size={24} color={color} />,
           }}
         />
         <Tabs.Screen

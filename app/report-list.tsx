@@ -1,5 +1,4 @@
 import { ScrollView, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { HeaderTitle } from "~/components/HeaderTitle";
 import { ReportCard } from "~/components/ReportCard";
 import { router } from "expo-router";
