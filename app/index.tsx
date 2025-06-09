@@ -68,6 +68,7 @@ export default function HomeScreen() {
               title={report.title}
               date={report.date}
               location={report.location}
+              description={report.description}
               status={report.status}
             />
           ))}

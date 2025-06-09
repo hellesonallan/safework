@@ -87,7 +87,7 @@ export default function RootLayout() {
         <Tabs.Screen
           name="reports/[id]"
           options={{
-            title: "Detalhes do Reporte",
+            title: "Detalhes",
             headerLeft: () => <BackButton />,
             href: null,
           }}

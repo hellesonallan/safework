@@ -15,6 +15,7 @@ interface ReportCardProps {
   title: string;
   date: string;
   location: string;
+  description: string;
   status: Status;
 }
 
@@ -23,6 +24,7 @@ export function ReportCard({
   title,
   date,
   location,
+  description,
   status,
 }: ReportCardProps) {
   const statusConfig = {
@@ -43,15 +45,12 @@ export function ReportCard({
   const handlePress = () => {
     router.push({
       pathname: "/reports/[id]",
-      params: { id, title, status },
+      params: { id, title, date, status, location, description },
     });
   };
 
   return (
-    <Card
-      className="flex-row justify-between items-center mb-2"
-      onTouchEnd={handlePress}
-    >
+    <Card className="flex-row justify-between mb-2" onTouchEnd={handlePress}>
       <CardHeader>
         <CardTitle className="text-lg">{title}</CardTitle>
         <CardDescription>{date}</CardDescription>
@@ -60,7 +59,6 @@ export function ReportCard({
         <Badge className={statusConfig[status].bgColor}>
           <Text>{statusConfig[status].text}</Text>
         </Badge>
-        <CardDescription>{location}</CardDescription>
       </CardHeader>
     </Card>
   );
